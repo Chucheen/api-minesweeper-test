@@ -1,24 +1,61 @@
-# README
+# MineSweeper API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Small Api and libraries to be served as the backend for the game :)
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+```
+bundle install
+RAILS_ENV=development rails db:create
+RAILS_ENV=development rails db:migrate
+rails c
+```
 
-* System dependencies
+### Prerequisites
 
-* Configuration
 
-* Database creation
+```
+PostgreSQL
+```
 
-* Database initialization
+### Installing
 
-* How to run the test suite
+Install is just as easy as clone this repo and run
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+RAILS_ENV=development rails db:create
+RAILS_ENV=development rails db:migrate
+rails c
+```
 
-* Deployment instructions
+End with an example of getting some data out of the system or using it for a little demo
 
-* ...
+## Running the tests
+
+```
+rspec spec
+```
+
+## Deployment
+
+To deploy, ask for permissions and
+```
+git remote add origin https://git.heroku.com/warm-lowlands-29327.git
+git push heroku master
+```
+
+Right now it's deployed to:
+https://warm-lowlands-29327.herokuapp.com/
+
+## Built With
+
+* [RubyOnRails <3](https://rubyonrails.org/) - The web framework used
+
+## Authors
+
+* **Jesus Gutierrez (Chucheen)** - *Initial work* -
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details

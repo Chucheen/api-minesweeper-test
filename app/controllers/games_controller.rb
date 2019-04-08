@@ -7,7 +7,7 @@ class GamesController < ApplicationController
   def check
     game = Game.find(params[:id])
     begin
-      context = Helpers::CellClicker.new(game, "#{check_params[:x_coordinate].to_i}:#{check_params[:y_coordinate].to_i}").check!
+      context = ::Helpers::CellClicker.new(game, "#{check_params[:x_coordinate].to_i}:#{check_params[:y_coordinate].to_i}").check!
       raise MineSweeperErrors::MineSteppedError if context[:new_status] == 'lost'
     rescue MineSweeperErrors::WrongStatusError
       return render json: {message: 'The game is currently on pause'}, status: :bad_request
@@ -19,7 +19,7 @@ class GamesController < ApplicationController
   end
 
   def create
-    game = Helpers::GameCreator.new(create_params).create!
+    game = ::Helpers::GameCreator.new(create_params).create!
     render json: game, status: :created
   end
 
