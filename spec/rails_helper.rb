@@ -63,7 +63,6 @@ RSpec.configure do |config|
   # Testing DB is set up in lib/tasks/multi-tenant.rake
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation, { except: %w[tenants]})
     DatabaseCleaner.start
     DatabaseCleaner.clean
   end

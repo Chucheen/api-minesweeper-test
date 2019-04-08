@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190401062104) do
+ActiveRecord::Schema.define(version: 20190407161712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,10 @@ ActiveRecord::Schema.define(version: 20190401062104) do
     t.string "status"
     t.string "started"
     t.integer "cells_long"
+    t.datetime "paused_at"
+    t.integer "played_time"
+    t.integer "number_of_mines"
+    t.datetime "resumed_at"
   end
 
   add_foreign_key "game_cells", "games"
