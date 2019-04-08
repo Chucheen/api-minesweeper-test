@@ -90,7 +90,7 @@ RSpec.describe Helpers::CellClicker, type: :model do
         subject { described_class.new(game, "#{remaining_cell_coordinate[:x]}:#{remaining_cell_coordinate[:y]}").check! }
 
         it 'raises an error' do
-          expect{subject}.to raise_error Errors::WrongStatusError
+          expect{subject}.to raise_error MineSweeperErrors::WrongStatusError
         end
       end
     end

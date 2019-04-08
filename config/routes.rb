@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resource :games, only: [:create, :show] do
+    post :check
+    put :pause
+    put :resume
+  end
 end

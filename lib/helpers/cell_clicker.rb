@@ -8,7 +8,7 @@ class Helpers::CellClicker
   end
 
   def check!
-    raise Errors::WrongStatusError.new('The game is paused') if @game.status == 'paused'
+    raise MineSweeperErrors::WrongStatusError.new('The game is paused') if @game.status == 'paused'
     @cell.update_attributes!(status: 'opened')
     reveal_adjacents!
     mark_as('lost') if is_mined?
